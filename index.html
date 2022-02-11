@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous'>
+  <link rel="stylesheet" href="style.css">
+  <title>Cookie Landia</title>
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container-fluid">
+    <div class="row bg-secondary">
+      <div class="col-12 text-center">
+        <h1 class="text-light">Grandma Cookie Landia</h1>
+      </div>
+    </div>
+  </header>
+  <main class="container-fluid ">
+    <div class="row ">
+      <div class="col d-flex justify-content-center">
+        <img class="img-fluid" onclick="mine()"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/640px-FullMoon2010.jpg"
+          alt="">
+      </div>
+    </div>
+    <div class="row justify-content-around">
+
+      <div class="col-5 bg-secondary m-2">
+        <h2>Inventory</h2>
+        <div>
+          <h3>Chesse: <span id="cheese">0</span></h3>
+          <h3>PickAxe: <span id="pickaxes">0</span></h3>
+          <h3>Astronaunt: <span id="astronaunt">0</span> </h3>
+
+          <h3>Rovers: <span id="rovers">0</span></h3>
+          <h3>Astriod: <span id="astriod">0</span></h3>
+
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-6 bg-secondary">
+        <h2>Store</h2>
+        <div>
+          <h2>Click Upgrades</h2>
+          <button onclick="buyClickUpgrade('pickaxes')">Buy PickAxe <span id="pickAxe"></span></button>
+          <button onclick="buyClickUpgrade('astronaunt')">By Astronaunt</button>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center m-2">
+      <div class="col-6 bg-warning">
+        <div class="div">
+          <h2>Auto Upgrades</h2>
+          <button onclick="buyAutoUpgrade('rovers')">Buy Rover</button>
+          <button onclick="buyAutoUpgrade('astriod')">Buy Astriod</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="container-fluid">
+
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
