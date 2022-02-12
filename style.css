@@ -1,9 +1,19 @@
-body{
-  min-height: 100vh
+main{
+  min-height: 95vh
 }
 
 img{
   object-fit: cover;
   min-height: 300px;
   width: 200px,
+}
+
+.bg-img{
+  background-image: url('https://lh3.googleusercontent.com/_VZesw5O-D3IV5rBLBiRFZ_9XReFoLJ3i4gje818qJb4BKyKi9D8cD1BF_V2l-45d6S2IQnT5aCzWta8gtOzgfvJmg=w640-h400-e365-rj-sc0x00ffffff');
+  background-size: cover;
+}
+
+.clickable{
+  cursor: pointer;
+  transition: all .2s ease;
 }

@@ -25,7 +25,7 @@ let automaticUpgrades = {
     multiplier: 4
   }
 };
-//this is every time I click the image the cheese increases and when I purchase an axe, the cheese is mulptpued by quanity + mulitplier//
+// this is every time I click the image the cheese increases and when I purchase an axe or astronaunt, the cheese is mulptpued by quanity + mulitplier.  //
 function mine() {
   cheese += 2
 
@@ -60,7 +60,7 @@ function update() {
   document.getElementById("axeprice").innerText = clickUpgrades.pickaxes.price
 }
 
-//every time I purchase an axe the chesse is subtracted by the price and the quanity increases 
+
 function buyPickaxe() {
   let click = clickUpgrades.pickaxes
   if (cheese >= click.price) {
@@ -75,6 +75,8 @@ function buyPickaxe() {
   update()
 }
 
+
+/*every time I purchase an axe or astronuant the chesse is subtracted by the price and the quanity increases becuase you bought either a astronaunt or an axe. 1. the click is a variable that is getting the object clickUpgrades and then acessing the object inside of it by using the bracket notation. 2 then you create an if statment that says "if the cheese is greater than or equal to the price of the item you want to purchase?then you subtract the difference between the cheese and the price of the item, then since you bought an item, then you can increment the quantity. Also everytime you purchase an item, you want to increase the price of the item by 2 3. if you don't have enough cheese to buy the item, then alert the person that you cannot buy the item*/
 function buyClickUpgrade(itemname) {
   let click = clickUpgrades[itemname]
   if (cheese >= click.price) {
