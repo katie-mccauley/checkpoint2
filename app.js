@@ -66,8 +66,12 @@ function update() {
   document.getElementById("roverprice").innerText = automaticUpgrades.rovers.price
   document.getElementById("astriodprice").innerText = automaticUpgrades.astriod.price
   // document.getElementById("cps").innerHTML = automaticUpgrades.astriod.multiplier += automaticUpgrades.rovers.multiplier
-  // document.getElementById("tcm").innerHTML = cheese
+
 }
+
+// function updateStat(){
+//   document.getElementById("tcm").innerText = 
+// }
 
 
 function buyPickaxe() {
