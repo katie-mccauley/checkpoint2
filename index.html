@@ -28,7 +28,7 @@
   </style>
 </head>
 
-<body class="debug">
+<body class="">
   <header class="container-fluid">
     <div class="row bg-secondary">
       <div class="col-12 text-center">
@@ -67,7 +67,7 @@
       </div>
     </div>
     <!-- NOTE this is the inventory and the stats place, this is the last area before the footer, this is using the ids so the dom is able to maninuplate the numbers changing -->
-    <div class="row justify-content-around m-4 text-center">
+    <div class="row justify-content-around m-0 text-center">
       <div class="col-3 bg-secondary m-2 rounded text-light">
         <h2>Inventory</h2>
         <div>
@@ -82,8 +82,10 @@
       </div>
       <div class="col-3 bg-secondary m-2 rounded text-light">
         <h2>STATS</h2>
-        <h3>CPS <span id="cps"></span></h3>
-        <h3>TCM <span id="tcm"></span></h3>
+        <div>
+          <h3>CPS(cheese per three seconds): <span id="cps">1</span></h3>
+          <h3>TCM(Total Cheese Multiplier): <span id="tcm">1</span></h3>
+        </div>
       </div>
     </div>
 

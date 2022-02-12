@@ -25,7 +25,7 @@ let automaticUpgrades = {
     multiplier: 4
   }
 };
-//  this is every time I click the image the cheese increases and when I purchase an axe or astronaunt, the cheese is mulptpued by quanity + mulitplier. NOTE everytime I click the image, the cheese count is going to increase by two. the reason why the clickmine goes here is becuase the function is invoked when you click, the clickMine updates the multipler in cheese because everytime you purchase an item in click, it is going to multiply the cheese which effects the screen right after the purchase //
+/*  this is every time I click the image the cheese increases and when I purchase an axe or astronaunt, the cheese is mulptpued by quanity + mulitplier. NOTE everytime I click the image, the cheese count is going to increase by two. the reason why the clickmine goes here is becuase the function is invoked when you click, the clickMine updates the multipler in cheese because everytime you purchase an item in click, it is going to multiply the cheese which effects the screen right after the purchase */
 function mine() {
   cheese += 2
   clickMine()
@@ -65,6 +65,8 @@ function update() {
   document.getElementById("astroprice").innerText = clickUpgrades.astronaunt.price
   document.getElementById("roverprice").innerText = automaticUpgrades.rovers.price
   document.getElementById("astriodprice").innerText = automaticUpgrades.astriod.price
+  // document.getElementById("cps").innerHTML = automaticUpgrades.astriod.multiplier += automaticUpgrades.rovers.multiplier
+  // document.getElementById("tcm").innerHTML = cheese
 }
 
 
