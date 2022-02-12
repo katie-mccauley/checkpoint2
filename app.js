@@ -7,9 +7,9 @@ let clickUpgrades = {
     multiplier: 2
   },
   astronaunt: {
-    price: 3,
+    price: 2,
     quantity: 0,
-    multiplier: 3
+    multiplier: 2
   }
 };
 
@@ -31,6 +31,7 @@ function mine() {
   clickMine()
   update()
 
+
 }
 
 /*NOTE this is the logic of what happens when my quantity is over 0 for the click upgrades, which leads to the price to increase by mulitplying the multplier and the quanity togther, and this function is invoked in the mine() is because it is effected by the number of clicks, dont want the auto to update in the mine() because you want to repeat the function in a time interval */
@@ -39,6 +40,7 @@ function clickMine() {
     let click = clickUpgrades[key]
     if (click.quantity > 0) {
       cheese += (click.multiplier * click.quantity)
+
     }
   }
 }
@@ -49,9 +51,11 @@ function autoMine() {
     let click = automaticUpgrades[key]
     if (click.quantity > 0) {
       cheese += (click.multiplier * click.quantity)
+
     }
   }
   update()
+  updateAuto()
 }
 
 /*NOTE the DOM effect for the numbers on the screen. 1. effects the cheese number when you click image with mine(). 2. the id calls back to the inventory section in pick axe section to change the number displayed when the number changes. This happens when you click the button with the onclick buyClickUpgrade('pickaxes'). 3. the id 'astronaunt' calls back to the inventory section in the astronaunt section in the inventory to chnage the number displayed when the number changes  */
@@ -65,13 +69,24 @@ function update() {
   document.getElementById("astroprice").innerText = clickUpgrades.astronaunt.price
   document.getElementById("roverprice").innerText = automaticUpgrades.rovers.price
   document.getElementById("astriodprice").innerText = automaticUpgrades.astriod.price
-  // document.getElementById("cps").innerHTML = automaticUpgrades.astriod.multiplier += automaticUpgrades.rovers.multiplier
-
+  // document.getElementById("cps").innerHTML = automaticUpgrades.astriod.multiplier += automaticUpgrades.rovers.multiplier//
 }
 
-// function updateStat(){
-//   document.getElementById("tcm").innerText = 
-// }
+let start = 2
+let autoStart = 3
+function updateClick() {
+  if (clickUpgrades.astronaunt.quantity > 0 || clickUpgrades.pickaxes.quantity > 0) {
+    let click = start + (clickUpgrades.pickaxes.quantity * clickUpgrades.pickaxes.multiplier) + (clickUpgrades.astronaunt.quantity * clickUpgrades.astronaunt.multiplier)
+    document.getElementById("tcm").innerText = click
+  }
+}
+
+function updateAuto() {
+  if (automaticUpgrades.astriod.quantity > 0 || automaticUpgrades.rovers.quantity > 0) {
+    let auto = autoStart + (automaticUpgrades.rovers.quantity * automaticUpgrades.rovers.multiplier) + (automaticUpgrades.astriod.quantity * automaticUpgrades.astriod.multiplier)
+    document.getElementById("cps").innerText = auto
+  }
+}
 
 
 function buyPickaxe() {
@@ -96,6 +111,7 @@ function buyClickUpgrade(itemname) {
     cheese -= click.price
     click.quantity++
     click.price += 2
+    updateClick()
   } else {
     alert("can't buy this")
   }
