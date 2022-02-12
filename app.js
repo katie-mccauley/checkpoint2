@@ -2,32 +2,32 @@ let cheese = 0
 
 let clickUpgrades = {
   pickaxes: {
-    price: 1,
+    price: 2,
     quantity: 0,
-    multiplier: 1
+    multiplier: 2
   },
   astronaunt: {
-    price: 1,
+    price: 3,
     quantity: 0,
-    multiplier: 1
+    multiplier: 3
   }
 };
 
 let automaticUpgrades = {
   rovers: {
-    price: 1,
+    price: 2,
     quantity: 0,
-    multiplier: 1
+    multiplier: 3
   },
   astriod: {
-    price: 1,
+    price: 3,
     quantity: 0,
-    multiplier: 1
+    multiplier: 4
   }
 };
 //this is every time I click the image the cheese increases and when I purchase an axe, the cheese is mulptpued by quanity + mulitplier//
 function mine() {
-  cheese += 1
+  cheese += 2
 
   for (let key in clickUpgrades) {
     let click = clickUpgrades[key]
@@ -50,13 +50,14 @@ function autoMine() {
   update()
 }
 
-// the DOM effect //
+// the DOM effect for the numbers on the screen and //
 function update() {
   document.getElementById("cheese").innerText = cheese
   document.getElementById("pickaxes").innerText = clickUpgrades.pickaxes.quantity
   document.getElementById("astronaunt").innerText = clickUpgrades.astronaunt.quantity
   document.getElementById("rovers").innerText = automaticUpgrades.rovers.quantity
   document.getElementById("astriod").innerText = automaticUpgrades.astriod.quantity
+  document.getElementById("axeprice").innerText = clickUpgrades.pickaxes.price
 }
 
 //every time I purchase an axe the chesse is subtracted by the price and the quanity increases 

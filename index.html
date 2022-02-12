@@ -50,21 +50,28 @@
         <h2>Inventory</h2>
         <div>
           <h3>Chesse: <span id="cheese">0</span></h3>
-          <h3>PickAxe: <span id="pickaxes">0</span></h3>
+          <h3>Pick Axe: <span id="pickaxes">0</span></h3>
           <h3>Astronaunt: <span id="astronaunt">0</span> </h3>
 
-          <h3>Rovers: <span id="rovers">0</span></h3>
+          <h3>Rovers: <span></span><span id="rovers">0</span></h3>
           <h3>Astriod: <span id="astriod">0</span></h3>
 
         </div>
       </div>
     </div>
+    <!-- <div class="row">
+      <div class="col-6 bg-secondary">
+        <h2>STATS</h2>
+        <h3>CPS <span id="cps"></span></h3>
+        <h3>TCM <span id="tcm"></span></h3>
+      </div>
+    </div> -->
     <div class="row justify-content-center">
       <div class="col-6 bg-secondary">
         <h2>Store</h2>
         <div>
           <h2>Click Upgrades</h2>
-          <button onclick="buyClickUpgrade('pickaxes')">Buy PickAxe <span id="pickAxe"></span></button>
+          <button onclick="buyClickUpgrade('pickaxes')">Buy PickAxe <span id="axeprice">2</span></button>
           <button onclick="buyClickUpgrade('astronaunt')">By Astronaunt</button>
         </div>
       </div>
@@ -73,7 +80,7 @@
       <div class="col-6 bg-warning">
         <div class="div">
           <h2>Auto Upgrades</h2>
-          <button onclick="buyAutoUpgrade('rovers')">Buy Rover</button>
+          <button onclick="buyAutoUpgrade('rovers')">Buy Rover </button>
           <button onclick="buyAutoUpgrade('astriod')">Buy Astriod</button>
         </div>
       </div>
