@@ -110,7 +110,12 @@ function buyClickUpgrade(itemname) {
   if (cheese >= click.price) {
     cheese -= click.price
     click.quantity++
-    click.price += 2
+    if (itemname == "pickaxes") {
+      click.price += 2
+    }
+    if (itemname == "astronaunt") {
+      click.price += 3
+    }
     updateClick()
   } else {
     alert("can't buy this")
@@ -128,7 +133,12 @@ function buyAutoUpgrade(itemname) {
   if (cheese >= click.price) {
     cheese -= click.price
     click.quantity++
-    click.price += 3
+    if (itemname == "rovers") {
+      click.price += 3
+    }
+    if (itemname == "astriod") {
+      click.price += 4
+    }
     updateAuto()
   } else {
     alert("can't buy this")
