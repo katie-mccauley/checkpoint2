@@ -15,14 +15,14 @@ let clickUpgrades = {
 
 let automaticUpgrades = {
   rovers: {
-    price: 2,
+    price: 3,
     quantity: 0,
     multiplier: 3
   },
   astriod: {
     price: 3,
     quantity: 0,
-    multiplier: 4
+    multiplier: 3
   }
 };
 /*  this is every time I click the image the cheese increases and when I purchase an axe or astronaunt, the cheese is mulptpued by quanity + mulitplier. NOTE everytime I click the image, the cheese count is going to increase by two. the reason why the clickmine goes here is becuase the function is invoked when you click, the clickMine updates the multipler in cheese because everytime you purchase an item in click, it is going to multiply the cheese which effects the screen right after the purchase */
@@ -39,7 +39,9 @@ function clickMine() {
   for (let key in clickUpgrades) {
     let click = clickUpgrades[key]
     if (click.quantity > 0) {
+      console.log(click.quantity * click.multiplier)
       cheese += (click.multiplier * click.quantity)
+      console.log(cheese);
 
     }
   }
@@ -51,7 +53,7 @@ function autoMine() {
     let click = automaticUpgrades[key]
     if (click.quantity > 0) {
       cheese += (click.multiplier * click.quantity)
-
+      console.log(cheese);
     }
   }
   update()
@@ -73,7 +75,6 @@ function update() {
 }
 
 let start = 2
-let autoStart = 3
 function updateClick() {
   if (clickUpgrades.astronaunt.quantity > 0 || clickUpgrades.pickaxes.quantity > 0) {
     let click = start + (clickUpgrades.pickaxes.quantity * clickUpgrades.pickaxes.multiplier) + (clickUpgrades.astronaunt.quantity * clickUpgrades.astronaunt.multiplier)
@@ -83,7 +84,7 @@ function updateClick() {
 
 function updateAuto() {
   if (automaticUpgrades.astriod.quantity > 0 || automaticUpgrades.rovers.quantity > 0) {
-    let auto = autoStart + (automaticUpgrades.rovers.quantity * automaticUpgrades.rovers.multiplier) + (automaticUpgrades.astriod.quantity * automaticUpgrades.astriod.multiplier)
+    let auto = (automaticUpgrades.rovers.quantity * automaticUpgrades.rovers.multiplier) + (automaticUpgrades.astriod.quantity * automaticUpgrades.astriod.multiplier)
     document.getElementById("cps").innerText = auto
   }
 }
