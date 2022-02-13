@@ -2,25 +2,25 @@ let cheese = 0
 
 let clickUpgrades = {
   pickaxes: {
-    price: 2,
+    price: 10,
     quantity: 0,
-    multiplier: 2
+    multiplier: 5
   },
   astronaunt: {
-    price: 2,
+    price: 12,
     quantity: 0,
-    multiplier: 2
+    multiplier: 4
   }
 };
 
 let automaticUpgrades = {
   rovers: {
-    price: 3,
+    price: 13,
     quantity: 0,
-    multiplier: 3
+    multiplier: 6
   },
   astriod: {
-    price: 3,
+    price: 15,
     quantity: 0,
     multiplier: 3
   }
@@ -57,7 +57,6 @@ function autoMine() {
     }
   }
   update()
-  updateAuto()
 }
 
 /*NOTE the DOM effect for the numbers on the screen. 1. effects the cheese number when you click image with mine(). 2. the id calls back to the inventory section in pick axe section to change the number displayed when the number changes. This happens when you click the button with the onclick buyClickUpgrade('pickaxes'). 3. the id 'astronaunt' calls back to the inventory section in the astronaunt section in the inventory to chnage the number displayed when the number changes  */
@@ -130,6 +129,7 @@ function buyAutoUpgrade(itemname) {
     cheese -= click.price
     click.quantity++
     click.price += 3
+    updateAuto()
   } else {
     alert("can't buy this")
   }

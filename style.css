@@ -1,19 +1,47 @@
+*{
+  font-family: 'Catamaran', sans-serif;
+  font-family: 'Comforter', cursive;
+  font-family: 'Rowdies', cursive;
+}
+
+
+:root{
+  --grey: rgba(131, 130, 130, 0.39);
+}
+
+.bg-grey{
+  background-color: var(--grey);
+}
+
 main{
   min-height: 93vh
 }
 
-img{
+
+.moon{
   object-fit: cover;
-  min-height: 300px;
-  width: 200px,
+  object-position: center;
+  transition: all .2s ease;
+  height: 400px;
+  width: 300px,
+}
+
+.moon:hover{
+  filter: drop-shadow(20px 10px 4px #4444dd);
 }
 
 .bg-img{
   background-image: url('https://lh3.googleusercontent.com/_VZesw5O-D3IV5rBLBiRFZ_9XReFoLJ3i4gje818qJb4BKyKi9D8cD1BF_V2l-45d6S2IQnT5aCzWta8gtOzgfvJmg=w640-h400-e365-rj-sc0x00ffffff');
   background-size: cover;
+  background-position: center;
 }
 
 .clickable{
   cursor: pointer;
   transition: all .2s ease;
 }
+
+.text-shadow{
+  filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
+}
+
