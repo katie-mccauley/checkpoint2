@@ -56,18 +56,19 @@
       <div class="col-md-2 col-12 bg-trans rounded">
         <div>
           <h2>Auto Upgrades</h2>
-          <button class="btn btn-info" onclick="buyAutoUpgrade('rovers')">Buy Rover </button>
+          <button class="btn btn-info" disabled id="btnR" onclick="buyAutoUpgrade('rovers')">Buy Rover </button>
           <h5>-<span id="roverprice">13 </span> cheese</h5>
-          <button class="btn btn-info" onclick="buyAutoUpgrade('astriod')">Buy Astriod</button>
+          <button class="btn btn-info" disabled id="btnAstriod" onclick="buyAutoUpgrade('astriod')">Buy Astriod</button>
           <h5>-<span id="astriodprice">15 </span> cheese</h5>
         </div>
       </div>
       <div class="col-md-2 col-12 bg-trans rounded">
         <div>
           <h2>Click Upgrades</h2>
-          <button class="btn btn-info" onclick="buyClickUpgrade('pickaxes')">Buy PickAxe </button>
+          <button class="btn btn-info" disabled id="btnP" onclick="buyClickUpgrade('pickaxes')">Buy PickAxe </button>
           <h5>-<span id="axeprice">10 </span> cheese</h5>
-          <button class="btn btn-info" onclick="buyClickUpgrade('astronaunt')">Buy Astronaunt</button>
+          <button class="btn btn-info" disabled id="btnAstro" onclick="buyClickUpgrade('astronaunt')">Buy
+            Astronaunt</button>
           <h5>-<span id="astroprice">12 </span> cheese</h5>
         </div>
       </div>

@@ -25,12 +25,36 @@ let automaticUpgrades = {
     multiplier: 3
   }
 };
+
+function buttons() {
+  if (clickUpgrades.pickaxes.price <= cheese) {
+    document.getElementById("btnP").disabled = false
+  } else {
+    document.getElementById("btnP").disabled = true
+  }
+  if (clickUpgrades.astronaunt.price <= cheese) {
+    document.getElementById("btnAstro").disabled = false
+  } else {
+    document.getElementById("btnAstro").disabled = true
+  }
+  if (automaticUpgrades.rovers.price <= cheese) {
+    document.getElementById("btnR").disabled = false
+  } else {
+    document.getElementById("btnR").disabled = true
+  }
+  if (automaticUpgrades.astriod.price <= cheese) {
+    document.getElementById("btnAstriod").disabled = false
+  } else {
+    document.getElementById("btnAstriod").disabled = true
+  }
+}
+
+
 /*  this is every time I click the image the cheese increases and when I purchase an axe or astronaunt, the cheese is mulptpued by quanity + mulitplier. NOTE everytime I click the image, the cheese count is going to increase by two. the reason why the clickmine goes here is becuase the function is invoked when you click, the clickMine updates the multipler in cheese because everytime you purchase an item in click, it is going to multiply the cheese which effects the screen right after the purchase */
 function mine() {
   cheese += 2
   clickMine()
   update()
-
 
 }
 
@@ -45,6 +69,7 @@ function clickMine() {
 
     }
   }
+  buttons()
 }
 
 /*NOTE This is adding the cheese to the auto quanity, once you buy somehting the interval will pick it up and calc. 1. this interiates over the automaticUpgrades object. 2. the click is a variable that is acessing the key inside the object. 3. if the quantity of the item is greater than 0, then mulitply the mulpliter and the quantity and add it to the cheese. When you purchase an item, then your cheese is going to increase in the time interval by increasing the cheese by multiplyiong the mulitpler and the quantity together and add it to the current cheese number */
@@ -57,6 +82,7 @@ function autoMine() {
     }
   }
   update()
+  buttons()
 }
 
 /*NOTE the DOM effect for the numbers on the screen. 1. effects the cheese number when you click image with mine(). 2. the id calls back to the inventory section in pick axe section to change the number displayed when the number changes. This happens when you click the button with the onclick buyClickUpgrade('pickaxes'). 3. the id 'astronaunt' calls back to the inventory section in the astronaunt section in the inventory to chnage the number displayed when the number changes  */
@@ -73,6 +99,8 @@ function update() {
   // document.getElementById("cps").innerHTML = automaticUpgrades.astriod.multiplier += automaticUpgrades.rovers.multiplier//
 }
 
+/* This updates the cheese per click in the stats section, this tests and sees if the quantity is 0(like after an item is purchased) then it updates the multiplier TCM */
+
 let start = 2
 function updateClick() {
   if (clickUpgrades.astronaunt.quantity > 0 || clickUpgrades.pickaxes.quantity > 0) {
@@ -80,6 +108,8 @@ function updateClick() {
     document.getElementById("tcm").innerText = click
   }
 }
+
+// This updates the cheese per three seconds and displays on the screen what the amount is //
 
 function updateAuto() {
   if (automaticUpgrades.astriod.quantity > 0 || automaticUpgrades.rovers.quantity > 0) {
@@ -121,6 +151,7 @@ function buyClickUpgrade(itemname) {
     alert("can't buy this")
   }
   update()
+  buttons()
 }
 
 
@@ -144,6 +175,7 @@ function buyAutoUpgrade(itemname) {
     alert("can't buy this")
   }
   update()
+  buttons()
 }
 
 
