@@ -4,12 +4,14 @@ let clickUpgrades = {
   pickaxes: {
     price: 10,
     quantity: 0,
-    multiplier: 5
+    multiplier: 5,
+    inflation: 2
   },
   astronaunt: {
     price: 12,
     quantity: 0,
-    multiplier: 4
+    multiplier: 4,
+    inflation: 5
   }
 };
 
@@ -26,6 +28,27 @@ let automaticUpgrades = {
   }
 };
 
+
+// for (let key in automaticUpgrades) {
+//   let upgrade = automaticUpgrades[key]
+//   document.getElementById(key) = upgrade.quantity
+//   doucment.getElementById(key+"-price") upgrade.price
+//   if (upgrade.price <= cheese) {
+//     document.getElementById(key + "-button").disabled = false
+//   } else {
+//     document.getElementById(key + "-button").disabled = true
+//   }
+// }
+// for (let key in clickUpgrades) {
+//   let upgrade = clickUpgrades[key]
+//   document.getElementById(key) = upgrade.quantity
+//   doucment.getElementById(key+"-price") upgrade.price
+//   if (upgrade.price <= cheese) {
+//     document.getElementById(key + "-button").disabled = false
+//   } else {
+//     document.getElementById(key + "-button").disabled = true
+//   }
+// }
 function buttons() {
   if (clickUpgrades.pickaxes.price <= cheese) {
     document.getElementById("btnP").disabled = false
