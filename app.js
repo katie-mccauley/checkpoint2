@@ -114,7 +114,7 @@ function buyClickUpgrade(itemname) {
       click.price += 2
     }
     if (itemname == "astronaunt") {
-      click.price += 3
+      click.price += 5
     }
     updateClick()
   } else {
